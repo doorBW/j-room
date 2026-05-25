@@ -1,0 +1,51 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (자동화 스크립트용)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+.env.local
+.env.*.local
+
+# Python (스크립트용)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# AI 도구 캐시
+.canva-cache/
+.figma-cache/
+.bannerbear-cache/
+
+# 임시 파일
+*.tmp
+*.bak
+*~
+
+# 대용량 원본 (필요시 LFS 또는 외부 스토리지)
+assets/raw/
+*.psd
+*.ai
+*.sketch
+
+# 비밀
+secrets/
+*.key
+*.pem
+credentials.json
+
+# OMC 작업 캐시 (이 레포에서는 사용 안 함)
+.omc/
+.claude/
