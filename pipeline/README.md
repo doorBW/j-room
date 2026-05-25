@@ -40,7 +40,7 @@ for (const card of cards) {
 
 #### Option B: HTML/CSS + Puppeteer (무료, 풀 컨트롤)
 - `pipeline/templates/*.html` 에 카드 디자인
-- Puppeteer로 1080x1080 영역 스크린샷
+- Puppeteer로 1080x1350 (4:5 인스타 세로형) 영역 스크린샷
 
 ```javascript
 // pipeline/render-puppeteer.js
@@ -48,7 +48,7 @@ import puppeteer from 'puppeteer';
 
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
-await page.setViewport({ width: 1080, height: 1080 });
+await page.setViewport({ width: 1080, height: 1350 });
 await page.goto(`file://${__dirname}/templates/review-cover.html`);
 await page.evaluate(data => { /* DOM 채우기 */ }, card);
 await page.screenshot({ path: `output/${card.id}.png` });

@@ -205,7 +205,7 @@ const html = `
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
   <style>
-    body { width: 1080px; height: 1080px; background: #1a1a2e;
+    body { width: 1080px; height: 1350px; background: #1a1a2e;
            display: flex; align-items: center; justify-content: center; }
     .card { font-family: 'Noto Sans KR'; color: white; text-align: center; }
     .title { font-size: 60px; font-weight: 700; color: #e94560; }
@@ -230,11 +230,11 @@ Node.js로 Chrome 제어 → HTML을 스크린샷.
 const puppeteer = require('puppeteer');
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
-await page.setViewport({ width: 1080, height: 1080 });
+await page.setViewport({ width: 1080, height: 1350 });
 await page.setContent(htmlTemplate);
 await page.screenshot({
   path: 'card.png',
-  clip: { x: 0, y: 0, width: 1080, height: 1080 }
+  clip: { x: 0, y: 0, width: 1080, height: 1350 }
 });
 await browser.close();
 ```
