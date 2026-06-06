@@ -1,0 +1,13 @@
+{
+  "name": "jroom-card-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "방탈출 카드뉴스 HTML/CSS -> PNG 자동 생성 파이프라인",
+  "scripts": {
+    "render": "node render.js",
+    "render:play33": "node render.js data/play33-gundae.json"
+  },
+  "dependencies": {
+    "puppeteer": "^23.6.0"
+  }
+}

@@ -2,6 +2,51 @@
 
 > 카드뉴스 생성 자동화 코드. 서버 개발자 친화 영역.
 
+## 🚀 빠른 시작 (HTML/CSS → PNG)
+
+데이터(JSON) + 스타일(CSS) → Puppeteer로 카드 PNG 자동 생성.
+
+```bash
+cd pipeline
+npm install                 # 최초 1회 (Puppeteer + Chromium 다운로드)
+npm run render:play33       # PLAY33 콘텐츠 렌더링
+# 또는: node render.js data/<파일>.json
+```
+
+결과:
+- `pipeline/output/<slug>/<slug>-01.png` ~ `-08.png` (2160×2700, @2x 고해상도)
+- `pipeline/preview.html` ← 브라우저로 열면 8장 전체 미리보기
+
+### 구조
+```
+pipeline/
+├── render.js              # 메인: JSON+CSS → HTML → PNG 캡처
+├── styles.css            # 카드 디자인 (컬러/폰트/레이아웃)
+├── lib/cards.js          # 카드 타입별 HTML 생성 (cover/intro/theme/compare/store/cta)
+├── data/<slug>.json      # 콘텐츠 데이터 (이것만 바꾸면 새 카드뉴스)
+└── output/<slug>/        # 생성된 PNG (gitignore)
+```
+
+### 새 콘텐츠 만들기
+1. `data/play33-gundae.json` 복사 → `data/새이름.json`
+2. `cards` 배열의 텍스트만 교체
+3. `node render.js data/새이름.json`
+
+### 카드 타입 (cards[].type)
+| type | 용도 | 주요 필드 |
+|------|------|----------|
+| `cover` | 표지 | title, titleAccent, hook, sub |
+| `intro` | 도입 | title, points[] |
+| `theme` | 테마 소개 | name, level, quote, genre, rating, review |
+| `compare` | 비교표 | rows[], match[] |
+| `store` | 매장정보 | items[] |
+| `cta` | 마무리 | title, actions[], next |
+
+> 디자인 조정은 `styles.css` 만 건드리면 모든 카드에 일괄 반영.
+> 배경 이미지/폰트/색상 변경은 [docs/DESIGN_GUIDE.md](../docs/DESIGN_GUIDE.md) 참고.
+
+---
+
 ## 단계별 자동화 로드맵
 
 ### Stage 0: 수동 (현재)
