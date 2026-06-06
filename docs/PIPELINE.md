@@ -39,7 +39,7 @@
 **최소 필드**:
 ```markdown
 ---
-type: review | course | recommendation
+type: recommendation | course | news | review
 created: 2026-05-25
 status: idea
 ---
