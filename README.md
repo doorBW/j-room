@@ -34,6 +34,7 @@ j-room/
 │   ├── CONTENT_TYPES.md     # 콘텐츠 타입별 상세 정의
 │   ├── CONTENT_STRATEGY.md  # 발행 캘린더 + 카테고리 맵 + 배치 생산법
 │   ├── BRAND_GUIDE.md       # 톤앤매너, 컬러, 폰트, 프로필
+│   ├── DESIGN_GUIDE.md      # 미리캔버스 카드뉴스 디자인 가이드 (실전 포함)
 │   └── AI_TOOLS.md          # 카드뉴스 제작 AI 도구 리서치
 ├── content/               # 실제 콘텐츠 (마크다운 원본)
 │   ├── ideas/             # 아이디어 + BACKLOG.md (발행 주제 풀)
