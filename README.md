@@ -28,13 +28,14 @@
 ```
 j-room/
 ├── docs/                  # 파이프라인, 컨텐츠 정의, 브랜드 가이드
-│   ├── PIPELINE.md        # 아이디어 → 게시 전체 워크플로우
-│   ├── CONTENT_TYPES.md   # 콘텐츠 타입별 상세 정의
-│   ├── BRAND_GUIDE.md     # 톤앤매너, 컬러, 폰트
-│   └── AI_TOOLS.md        # 카드뉴스 제작 AI 도구 리서치
+│   ├── PIPELINE.md          # 아이디어 → 게시 전체 워크플로우
+│   ├── CONTENT_TYPES.md     # 콘텐츠 타입별 상세 정의
+│   ├── CONTENT_STRATEGY.md  # 발행 캘린더 + 카테고리 맵 + 배치 생산법
+│   ├── BRAND_GUIDE.md       # 톤앤매너, 컬러, 폰트, 프로필
+│   └── AI_TOOLS.md          # 카드뉴스 제작 AI 도구 리서치
 ├── content/               # 실제 콘텐츠 (마크다운 원본)
-│   ├── ideas/             # 아이디어 단계 (날것)
-│   ├── drafts/            # 작업 중인 초안
+│   ├── ideas/             # 아이디어 + BACKLOG.md (발행 주제 풀)
+│   ├── drafts/            # 작업 중인 초안 / 발행 대기(재고)
 │   └── published/         # 게시 완료 (백업 + 회고)
 ├── templates/             # 재사용 템플릿
 │   ├── card-news/         # 콘텐츠 타입별 카드뉴스 텍스트 템플릿
@@ -52,10 +53,12 @@ j-room/
 
 ## 시작하기
 
-1. 아이디어가 떠오르면 → `content/ideas/YYYY-MM-DD-주제.md` 에 메모
-2. 작성할 차례가 되면 → `templates/card-news/<타입>.md` 복사 → `content/drafts/` 에서 작성
+1. 발행할 주제는 [content/ideas/BACKLOG.md](content/ideas/BACKLOG.md) 에서 고르거나 추가
+2. 만들 차례가 되면 → `templates/card-news/<타입>.md` 복사 → `content/drafts/` 에서 작성
 3. 카드뉴스 디자인 → [docs/PIPELINE.md](docs/PIPELINE.md) 의 디자인 단계 따라 진행
 4. 인스타그램 게시 후 → `content/published/` 로 이동 + `reviews/` 에 성과 기록
+
+**운영 원칙**: 생산은 몰아서(배치), 발행은 규칙적으로(주 2회). → [docs/CONTENT_STRATEGY.md](docs/CONTENT_STRATEGY.md)
 
 ---
 
