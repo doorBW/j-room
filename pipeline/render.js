@@ -15,6 +15,18 @@ const { buildHtml } = require('./lib/cards');
 
   const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
   const css = fs.readFileSync(path.resolve(__dirname, 'styles.css'), 'utf8');
+
+  // 포스터 등 로컬 이미지를 base64 data URI로 임베드 (setContent에서 안정적으로 로드)
+  const repoRoot = path.resolve(__dirname, '..');
+  for (const c of data.cards) {
+    if (!c.poster) continue;
+    const imgPath = path.resolve(repoRoot, c.poster);
+    if (!fs.existsSync(imgPath)) { console.warn(`⚠️  포스터 없음: ${imgPath}`); continue; }
+    const ext = path.extname(imgPath).slice(1).toLowerCase();
+    const mime = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
+    c.posterData = `data:${mime};base64,${fs.readFileSync(imgPath).toString('base64')}`;
+  }
+
   const html = buildHtml(data, css);
 
   // 브라우저로 열어볼 수 있는 미리보기 저장

@@ -26,6 +26,7 @@
     },
     {
       "type": "theme",
+      "poster": "assets/images/play33/geunal.png",
       "level": 1,
       "levelLabel": "입문",
       "name": "그날",
@@ -40,6 +41,7 @@
     },
     {
       "type": "theme",
+      "poster": "assets/images/play33/mokgyeokja.jpg",
       "level": 2,
       "levelLabel": "연출 폭격",
       "name": "목격자",
@@ -55,6 +57,7 @@
     {
       "type": "theme",
       "accent": true,
+      "poster": "assets/images/play33/dial.jpg",
       "level": 3,
       "levelLabel": "끝판왕",
       "name": "다이얼",

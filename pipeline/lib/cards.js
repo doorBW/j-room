@@ -36,9 +36,17 @@ function intro(c) {
 
 function theme(c) {
   const badge = c.badge ? `<span class="badge">${c.badge}</span>` : '';
+  const head = c.posterData
+    ? `<div class="poster">
+         <img src="${c.posterData}" alt="${c.name}">
+         <div class="poster__grad"></div>
+         <div class="level poster__level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
+         <div class="poster__name">〈${c.name}〉${badge}</div>
+       </div>`
+    : `<div class="level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
+       <h2 class="theme__name">〈${c.name}〉${badge}</h2>`;
   return `
-    <div class="level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
-    <h2 class="theme__name">〈${c.name}〉${badge}</h2>
+    ${head}
     <p class="theme__quote">"${c.quote}"</p>
     <p class="theme__meta">${c.genre} · 난이도 ${difficultyStars(c.difficulty)}<br>${c.players} · ${c.time} · 1인 ${c.price}원</p>
     <div class="theme__rating">추천도 ${stars(c.rating)} <span class="num">${c.rating.toFixed(1)}</span></div>
