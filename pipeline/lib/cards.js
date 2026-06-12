@@ -41,8 +41,8 @@ function theme(c) {
          <img src="${c.posterData}" alt="${c.name}">
          <div class="poster__grad"></div>
          <div class="level poster__level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
-         <div class="poster__name">〈${c.name}〉${badge}</div>
-       </div>`
+       </div>
+       <h2 class="theme__name theme__name--below">〈${c.name}〉${badge}</h2>`
     : `<div class="level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
        <h2 class="theme__name">〈${c.name}〉${badge}</h2>`;
   return `
