@@ -54,6 +54,8 @@ secrets/
 *.pem
 credentials.json
 
-# OMC 작업 캐시 (이 레포에서는 사용 안 함)
+# OMC 작업 캐시
 .omc/
-.claude/
+# .claude 직속은 무시하되, 인스타 운영 스킬은 버전 관리
+.claude/*
+!.claude/skills/
