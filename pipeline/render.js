@@ -18,13 +18,17 @@ const { buildHtml } = require('./lib/cards');
 
   // 포스터 등 로컬 이미지를 base64 data URI로 임베드 (setContent에서 안정적으로 로드)
   const repoRoot = path.resolve(__dirname, '..');
-  for (const c of data.cards) {
-    if (!c.poster) continue;
-    const imgPath = path.resolve(repoRoot, c.poster);
-    if (!fs.existsSync(imgPath)) { console.warn(`⚠️  포스터 없음: ${imgPath}`); continue; }
+  const embedPoster = (obj) => {
+    if (!obj || !obj.poster) return;
+    const imgPath = path.resolve(repoRoot, obj.poster);
+    if (!fs.existsSync(imgPath)) { console.warn(`⚠️  포스터 없음: ${imgPath}`); return; }
     const ext = path.extname(imgPath).slice(1).toLowerCase();
     const mime = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
-    c.posterData = `data:${mime};base64,${fs.readFileSync(imgPath).toString('base64')}`;
+    obj.posterData = `data:${mime};base64,${fs.readFileSync(imgPath).toString('base64')}`;
+  };
+  for (const c of data.cards) {
+    embedPoster(c);
+    if (Array.isArray(c.items)) c.items.forEach(embedPoster);
   }
 
   const html = buildHtml(data, css);

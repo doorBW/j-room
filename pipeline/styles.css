@@ -102,7 +102,9 @@ body {
 .section__title { font-size: 66px; font-weight: 800; margin-bottom: 56px; letter-spacing: -0.01em; }
 .section__title .accent { color: var(--accent); }
 
-.bullets { list-style: none; display: flex; flex-direction: column; gap: 40px; }
+.intro__subtitle { font-size: 32px; color: var(--accent); font-weight: 600; margin: -34px 0 42px; }
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 34px; }
+.card--intro .bullets li { font-size: 36px; }
 .bullets li { font-size: 42px; line-height: 1.45; padding-left: 56px; position: relative; }
 .bullets li::before { content: '✦'; position: absolute; left: 0; top: 2px; color: var(--accent); }
 .bullets li .accent { color: var(--accent); font-weight: 700; }
@@ -138,7 +140,9 @@ body {
 .card--theme .theme__quote { margin-top: 16px; font-size: 31px; }
 .card--theme .theme__meta { margin-top: 20px; }
 .card--theme .theme__rating { margin-top: 18px; }
-.card--theme .theme__review { margin-top: 20px; font-size: 32px; padding: 24px 30px; }
+.card--theme .theme__felt { margin-top: 16px; font-size: 31px; }
+.card--theme .theme__felt b { font-size: 35px; }
+.card--theme .theme__review { margin-top: 18px; font-size: 31px; padding: 22px 28px; }
 
 .level {
   align-self: flex-start;
@@ -177,13 +181,24 @@ body {
   padding-left: 28px;
 }
 .theme__meta { font-size: 32px; color: var(--muted); margin-top: 40px; line-height: 1.7; }
-.theme__meta .diff { color: var(--accent); letter-spacing: 2px; }
+.theme__meta .diff { letter-spacing: 2px; }
+.diff__on { color: var(--accent); }
+.diff__off { color: #3a3a52; }
 .theme__rating { display: flex; align-items: center; gap: 20px; margin-top: 28px; font-size: 38px; font-weight: 700; }
 .theme__rating .num { font-size: 44px; }
+.theme__felt {
+  margin-top: 20px;
+  font-size: 33px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.theme__felt .diff { color: var(--accent); }
+.theme__felt b { font-size: 37px; }
 .theme__review {
   margin-top: 40px;
   font-size: 36px;
   line-height: 1.6;
+  white-space: pre-line;
   background: rgba(255,255,255,0.05);
   border-radius: 24px;
   padding: 34px 38px;
@@ -203,6 +218,16 @@ body {
 .ctable .hot { color: var(--accent); font-weight: 700; }
 .match { margin-top: 56px; font-size: 35px; line-height: 1.95; }
 .match .accent { color: var(--accent); font-weight: 700; }
+
+/* ---------- Lineup (포스터 3종 비교) ---------- */
+.lineup { display: flex; gap: 22px; justify-content: center; margin-bottom: 40px; }
+.lineup__item { flex: 1; text-align: center; }
+.lineup__poster { width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+.lineup__poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lineup__name { font-size: 38px; font-weight: 800; margin-top: 18px; }
+.lineup__stat { font-size: 25px; color: var(--muted); margin-top: 10px; line-height: 1.55; }
+.lineup__order { font-size: 37px; font-weight: 700; color: var(--accent); margin-top: 12px; }
+.lineup__tagline { font-size: 31px; color: var(--muted); font-style: italic; margin-top: 22px; }
 
 /* ---------- Store ---------- */
 .store__list { font-size: 38px; line-height: 2.05; }

@@ -8,82 +8,80 @@
   "cards": [
     {
       "type": "cover",
-      "kicker": "직접 다 해본 4명의 솔직 후기",
+      "kicker": "공테 도파민에 빠져버린 쫄보 4명의 공테 체험기",
       "title": "PLAY33 건대점",
-      "titleAccent": "미친 공테 삼총사",
-      "hook": "공식 공포도 표기, 믿지 마세요",
-      "sub": "공포도 약한 순서로 소개합니다 (그날 → 목격자 → 다이얼)"
+      "titleAccent": "다이얼 · 목격자 · 그날",
+      "hook": "분명히 할 만하다면서요 사장님.. 😇",
+      "sub": "공테 좋아하는데 얘네 안 해봤다면 당장 주목 👀"
     },
     {
       "type": "intro",
-      "title": "시작 전에",
+      "title": "쫄보 4인방",
+      "subtitle": "TEAM.89919495 · 공테 &amp; 문제방에 미쳐가는 중 🔥",
       "points": [
-        "건대 PLAY33 한 곳에서 분위기 다른 <span class=\"accent\">공포 3테마</span>",
-        "친구 4명이 셋 다 직접 클리어",
-        "공통점은 강력한 <span class=\"accent\">스토리 + 연출</span>",
-        "공포도 약한 순서로 소개합니다"
+        "<span class=\"accent\">89</span> · 100+ 쫄보, 힘에 밀리면 감 · 인테리어 감탄 전문 1",
+        "<span class=\"accent\">91</span> · 30+ 왕쫄보 방린이, 밀어도 안 감 · 인테리어 감탄 전문 2",
+        "<span class=\"accent\">94</span> · 100+ 쫄탱, 뼛속까지 이과 똑똑이 🧠",
+        "<span class=\"accent\">95</span> · 350+ 쫄탱, 인생 최대 업적 멸탐대 1위 🏆"
       ]
     },
     {
       "type": "theme",
       "poster": "assets/images/play33/geunal.png",
-      "level": 1,
-      "levelLabel": "입문",
       "name": "그날",
       "quote": "나는… 그 날 이후. 뜬 눈으로 며칠을 지새웠다.",
       "genre": "공포 · 드라마",
-      "difficulty": 1,
+      "officialDiff": 2,
+      "officialFear": "1",
       "players": "2~4인",
       "time": "60분",
       "price": "28,000",
-      "rating": 3.5,
-      "review": "‘못할 것 같다’ 느낌이 오기 전에 딱 정리되는 공포. <strong>PLAY33 건대 입문 테마로 딱이에요.</strong>"
+      "feltDiff": 2,
+      "feltFear": "2/5",
+      "review": "공테 입문으로 추천!! 🔰\n인테리어 좋고 공포도 좋음! 👍"
     },
     {
       "type": "theme",
       "poster": "assets/images/play33/mokgyeokja.jpg",
-      "level": 2,
-      "levelLabel": "연출 폭격",
       "name": "목격자",
       "quote": "모든 사건은 그것을 목격한 자에 의해 기록된다.",
-      "genre": "드라마 · 스릴러",
-      "difficulty": 1,
+      "genre": "공포 · 드라마",
+      "officialDiff": 2,
+      "officialFear": "1",
       "players": "2~3인",
       "time": "65분",
       "price": "29,000",
-      "rating": 4.0,
-      "review": "조명과 인테리어를 이렇게까지 쓴다고? <strong>연출이 미친 테마.</strong> 단, 눈 높아짐 주의."
+      "feltDiff": 2,
+      "feltFear": "2/5",
+      "review": "진짜 플레이33 인테리어/조명 활용 미쳤다. 💡\n플레이33 맛 느끼기에 최고!! 물론 무서와.. 😱"
     },
     {
       "type": "theme",
       "accent": true,
       "poster": "assets/images/play33/dial.jpg",
-      "level": 3,
-      "levelLabel": "끝판왕",
       "name": "다이얼",
       "badge": "팀 최애",
       "quote": "스마일~ 행복을 드리는 스마일 콜센터! 김미영입니다.",
-      "genre": "공포 · 스릴러",
-      "difficulty": 2,
+      "genre": "공포 · 드라마",
+      "officialDiff": 3,
+      "officialFear": "2",
       "players": "2~5인",
       "time": "60분",
       "price": "27,000",
-      "rating": 4.5,
-      "review": "연출도 공포도 다 미쳤음. <strong>공식 공포도 ★★는 오류 아닐까요?</strong> ‘그 구간’에선 비명만… 친구끼리 싸울 수도 있어요."
+      "feltDiff": 2,
+      "feltFear": "3.5/5",
+      "review": "아니 사장님.. 안 무섭다면서요.. 😭\n지금 다시 혼자 가서 하라 해도 못할 듯. 나 죽어 💀"
     },
     {
-      "type": "compare",
-      "title": "한눈에 비교",
-      "rows": [
-        { "name": "그날", "fear": "입문", "rating": "★ 3.5", "players": "2~4인", "time": "60분" },
-        { "name": "목격자", "fear": "중", "rating": "★ 4.0", "players": "2~3인", "time": "65분" },
-        { "name": "다이얼", "fear": "끝판왕", "rating": "★ 4.5", "players": "2~5인", "time": "60분", "hot": true }
+      "type": "lineup",
+      "title": "플레이33 건대점 한눈에 보기",
+      "items": [
+        { "name": "그날", "poster": "assets/images/play33/geunal.png", "feltDiff": "체감 ★★☆", "feltFear": "공포 2/5" },
+        { "name": "목격자", "poster": "assets/images/play33/mokgyeokja.jpg", "feltDiff": "체감 ★★☆", "feltFear": "공포 2/5" },
+        { "name": "다이얼", "poster": "assets/images/play33/dial.jpg", "feltDiff": "체감 ★★☆", "feltFear": "공포 3.5/5" }
       ],
-      "match": [
-        { "label": "첫 공포 방탈출", "value": "그날" },
-        { "label": "연출·분위기 끝까지", "value": "목격자" },
-        { "label": "제대로 무서운 거", "value": "다이얼 (각오 단단히)" }
-      ]
+      "order": "졸업 추천 순서 : 그날 → 목격자 → 다이얼",
+      "tagline": "건대는 다시금 공테 성지가 될 것인가.."
     },
     {
       "type": "store",
@@ -100,10 +98,10 @@
       "type": "cta",
       "title": "어떤 게 제일 끌리세요?",
       "actions": [
-        "댓글로 알려주세요 👇",
-        "저장해두면 건대 갈 때 바로 💾"
+        "방탈출 메이트한테 당장 공유 📲",
+        "절대 못할 것 같은 @쫄보 태그 😈"
       ],
-      "next": "다음엔 PLAY33 건대 3테마 연방 코스로 🗺️"
+      "next": "일단 〈그날〉으로 플레이33 맛보기 도전 🔓"
     }
   ]
 }

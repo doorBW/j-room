@@ -15,7 +15,7 @@ function fearDots(level, max = 3) {
 }
 
 function difficultyStars(n) {
-  return `<span class="diff">${'★'.repeat(n)}${'☆'.repeat(5 - n)}</span>`;
+  return `<span class="diff"><span class="diff__on">${'★'.repeat(n)}</span><span class="diff__off">${'☆'.repeat(5 - n)}</span></span>`;
 }
 
 /* ---------- card type renderers ---------- */
@@ -29,27 +29,24 @@ function cover(c) {
 }
 
 function intro(c) {
+  const sub = c.subtitle ? `<p class="intro__subtitle">${c.subtitle}</p>` : '';
   return `
     <h2 class="section__title">${c.title}</h2>
+    ${sub}
     <ul class="bullets">${c.points.map((p) => `<li>${p}</li>`).join('')}</ul>`;
 }
 
 function theme(c) {
   const badge = c.badge ? `<span class="badge">${c.badge}</span>` : '';
-  const head = c.posterData
-    ? `<div class="poster">
-         <img src="${c.posterData}" alt="${c.name}">
-         <div class="poster__grad"></div>
-         <div class="level poster__level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
-       </div>
-       <h2 class="theme__name theme__name--below">〈${c.name}〉${badge}</h2>`
-    : `<div class="level"><span class="level__dots">${fearDots(c.level)}</span> 공포 LV.${c.level} · ${c.levelLabel}</div>
-       <h2 class="theme__name">〈${c.name}〉${badge}</h2>`;
+  const poster = c.posterData
+    ? `<div class="poster"><img src="${c.posterData}" alt="${c.name}"></div>`
+    : '';
   return `
-    ${head}
+    ${poster}
+    <h2 class="theme__name theme__name--below">〈${c.name}〉${badge}</h2>
     <p class="theme__quote">"${c.quote}"</p>
-    <p class="theme__meta">${c.genre} · 난이도 ${difficultyStars(c.difficulty)}<br>${c.players} · ${c.time} · 1인 ${c.price}원</p>
-    <div class="theme__rating">추천도 ${stars(c.rating)} <span class="num">${c.rating.toFixed(1)}</span></div>
+    <p class="theme__meta">${c.genre} · 난이도(공식) ${difficultyStars(c.officialDiff)} · 공포도(공식) ${c.officialFear}<br>${c.players} · ${c.time} · 1인 ${c.price}원</p>
+    <div class="theme__felt">체감난이도 ${difficultyStars(c.feltDiff)} · 체감공포도 <b>${c.feltFear}</b></div>
     <div class="theme__review">${c.review}</div>`;
 }
 
@@ -81,7 +78,21 @@ function cta(c) {
     <div class="cta__next">${c.next || ''}</div>`;
 }
 
-const RENDERERS = { cover, intro, theme, compare, store, cta };
+function lineup(c) {
+  const items = c.items.map((it) => `
+    <div class="lineup__item">
+      <div class="lineup__poster"><img src="${it.posterData}" alt="${it.name}"></div>
+      <div class="lineup__name">〈${it.name}〉</div>
+      <div class="lineup__stat">${it.feltDiff}<br>${it.feltFear}</div>
+    </div>`).join('');
+  return `
+    <h2 class="section__title">${c.title}</h2>
+    <div class="lineup">${items}</div>
+    <div class="lineup__order">🎓 ${c.order}</div>
+    <div class="lineup__tagline">${c.tagline}</div>`;
+}
+
+const RENDERERS = { cover, intro, theme, compare, store, cta, lineup };
 
 /* ---------- shell + assembly ---------- */
 
