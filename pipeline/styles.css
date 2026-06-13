@@ -227,7 +227,16 @@ body {
 .lineup__name { font-size: 38px; font-weight: 800; margin-top: 18px; }
 .lineup__stat { font-size: 25px; color: var(--muted); margin-top: 10px; line-height: 1.55; }
 .lineup__order { font-size: 37px; font-weight: 700; color: var(--accent); margin-top: 12px; }
-.lineup__tagline { font-size: 31px; color: var(--muted); font-style: italic; margin-top: 22px; }
+.lineup__tagline { font-size: 31px; color: var(--muted); font-style: italic; margin-top: 20px; }
+.lineup__tip {
+  margin-top: 24px;
+  font-size: 29px;
+  line-height: 1.5;
+  background: rgba(233,69,96,0.12);
+  border: 1px solid rgba(233,69,96,0.35);
+  border-radius: 18px;
+  padding: 22px 26px;
+}
 
 /* ---------- Store ---------- */
 .store__list { font-size: 38px; line-height: 2.05; }

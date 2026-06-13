@@ -17,10 +17,10 @@
     {
       "type": "intro",
       "title": "쫄보 4인방",
-      "subtitle": "TEAM.89919495 · 공테 &amp; 문제방에 미쳐가는 중 🔥",
+      "subtitle": "TEAM.89929495 · 공테 &amp; 문제방에 미쳐가는 중 🔥",
       "points": [
         "<span class=\"accent\">89</span> · 100+ 쫄보, 힘에 밀리면 감 · 인테리어 감탄 전문 1",
-        "<span class=\"accent\">91</span> · 30+ 왕쫄보 방린이, 밀어도 안 감 · 인테리어 감탄 전문 2",
+        "<span class=\"accent\">92</span> · 30+ 왕쫄보 방린이, 밀어도 안 감 · 인테리어 감탄 전문 2",
         "<span class=\"accent\">94</span> · 100+ 쫄탱, 뼛속까지 이과 똑똑이 🧠",
         "<span class=\"accent\">95</span> · 350+ 쫄탱, 인생 최대 업적 멸탐대 1위 🏆"
       ]
@@ -45,7 +45,7 @@
       "poster": "assets/images/play33/mokgyeokja.jpg",
       "name": "목격자",
       "quote": "모든 사건은 그것을 목격한 자에 의해 기록된다.",
-      "genre": "공포 · 드라마",
+      "genre": "드라마 · 스릴러",
       "officialDiff": 2,
       "officialFear": "1",
       "players": "2~3인",
@@ -62,7 +62,7 @@
       "name": "다이얼",
       "badge": "팀 최애",
       "quote": "스마일~ 행복을 드리는 스마일 콜센터! 김미영입니다.",
-      "genre": "공포 · 드라마",
+      "genre": "공포 · 스릴러",
       "officialDiff": 3,
       "officialFear": "2",
       "players": "2~5인",
@@ -81,7 +81,8 @@
         { "name": "다이얼", "poster": "assets/images/play33/dial.jpg", "feltDiff": "체감 ★★☆", "feltFear": "공포 3.5/5" }
       ],
       "order": "졸업 추천 순서 : 그날 → 목격자 → 다이얼",
-      "tagline": "건대는 다시금 공테 성지가 될 것인가.."
+      "tagline": "건대는 다시금 공테 성지가 될 것인가..",
+      "tip": "요새 예약 조금 널널해진 것 같은데, 다시 핫해지기 전에 얼른 예약 ㄱㄱ 🏃"
     },
     {
       "type": "store",

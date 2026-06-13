@@ -85,11 +85,13 @@ function lineup(c) {
       <div class="lineup__name">〈${it.name}〉</div>
       <div class="lineup__stat">${it.feltDiff}<br>${it.feltFear}</div>
     </div>`).join('');
+  const tip = c.tip ? `<div class="lineup__tip">${c.tip}</div>` : '';
   return `
     <h2 class="section__title">${c.title}</h2>
     <div class="lineup">${items}</div>
     <div class="lineup__order">🎓 ${c.order}</div>
-    <div class="lineup__tagline">${c.tagline}</div>`;
+    <div class="lineup__tagline">${c.tagline}</div>
+    ${tip}`;
 }
 
 const RENDERERS = { cover, intro, theme, compare, store, cta, lineup };
