@@ -38,9 +38,12 @@ venv/
 pipeline/output/
 pipeline/preview.html
 
-# 외부 저작권 이미지 (매장 포스터 등) — 로컬에서만 사용, repo 미포함
-assets/images/play33/*
-!assets/images/play33/SOURCES.md
+# 외부 저작권 이미지 (매장 포스터) — 로컬에서만, SOURCES.md만 버전관리
+assets/images/*/*.png
+assets/images/*/*.jpg
+assets/images/*/*.jpeg
+assets/images/*/*.webp
+!assets/images/*/SOURCES.md
 
 # 대용량 원본 (필요시 LFS 또는 외부 스토리지)
 assets/raw/

@@ -260,6 +260,12 @@ body {
 .rating-row { display: flex; align-items: center; gap: 24px; font-size: 36px; }
 .rating-row__label { min-width: 200px; color: var(--muted); font-weight: 600; }
 .rating-row__num { font-weight: 800; font-size: 40px; color: var(--accent); margin-left: auto; }
+.ratings__store { font-size: 28px; color: var(--muted); margin-top: 8px; }
+.card--ratings .news__poster { width: 400px; height: 400px; margin-top: 0; }
+.card--ratings .theme__name--below { margin-top: 24px; font-size: 54px; }
+.card--ratings .theme__quote { margin-top: 16px; font-size: 30px; }
+.card--ratings .ratings { gap: 16px; margin-top: 26px; }
+.card--ratings .rating-row { font-size: 33px; }
 
 /* ---------- News item (소식) ---------- */
 .card--newsitem .card__body { padding: 28px 0; justify-content: center; }

@@ -123,10 +123,11 @@ function ratings(c) {
         <span class="rating-row__num">${r.score}</span>
       </div>`)
     .join('');
-  const store = c.store ? `${c.store} ` : '';
+  const storeLine = c.store ? `<div class="ratings__store">${c.store}</div>` : '';
   return `
     ${poster}
-    <h2 class="theme__name theme__name--below">${store}〈${c.name}〉</h2>
+    <h2 class="theme__name theme__name--below">〈${c.name}〉</h2>
+    ${storeLine}
     ${c.quote ? `<p class="theme__quote">"${c.quote}"</p>` : ''}
     <div class="ratings">${rows}</div>
     ${c.players ? `<div class="theme__felt">👥 권장 ${c.players}</div>` : ''}`;

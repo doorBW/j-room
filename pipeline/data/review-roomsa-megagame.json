@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "slug": "review-roomsa-megagame",
+    "store": "룸즈에이 강남점",
+    "handle": "@jroom.official",
+    "logo": "🔒 J-ROOM"
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "kicker": "쫄보 4인방이 다녀온",
+      "title": "룸즈에이 강남점",
+      "titleAccent": "〈메가게임〉",
+      "hook": "그 〈지니어스〉, 방탈출로 부활했다 🧠",
+      "sub": "도파민 터지는 4인 협동 후기 (스포 없음)"
+    },
+    {
+      "type": "ratings",
+      "poster": "assets/images/roomsa/megagame.png",
+      "store": "룸즈에이 강남점",
+      "name": "메가게임",
+      "quote": "지니어스를 사랑했던 사람들, 여기로 당장 집합.",
+      "ratings": [
+        { "label": "난이도", "score": 3.5 },
+        { "label": "공포도", "score": 0 },
+        { "label": "두뇌·전략", "score": 4 },
+        { "label": "팀워크", "score": 5 },
+        { "label": "추천도", "score": 5 }
+      ],
+      "players": "4인 (3인 이상 강력 추천)"
+    },
+    {
+      "type": "intro",
+      "title": "👍 좋았던 점",
+      "points": [
+        "<span class=\"accent\">지니어스</span>를 방탈출로 구현한 최고의 테마",
+        "비슷한 테마 많지만 그 느낌을 제일 잘 살림",
+        "진짜 도파민 터지게 즐거움 🤯"
+      ]
+    },
+    {
+      "type": "intro",
+      "title": "🤔 아쉬운 점",
+      "points": [
+        "시간이 조금만 더 주어졌다면…",
+        "긴박함은 좋지만, 쫓기느라 100% 다 못 즐긴 느낌"
+      ]
+    },
+    {
+      "type": "intro",
+      "title": "이런 분께",
+      "subtitle": "추천 / 비추천",
+      "points": [
+        "✅ 문제 푸는 거 좋아하면",
+        "✅ 친한 사람들과 도파민 즐기기 최고",
+        "❌ 방탈출 처음·몇 번 안 해봤다면 (익숙해진 뒤 추천)"
+      ]
+    },
+    {
+      "type": "store",
+      "title": "매장 정보",
+      "items": [
+        { "label": "📍 위치", "value": "역삼동 827-14 B2 (테헤란로4길 35)" },
+        { "label": "🚇 오시는 길", "value": "강남역 인근" },
+        { "label": "☎️ 전화", "value": "02-558-7546" },
+        { "label": "🎮 정보", "value": "아케이드·미션 · 90분 · 2~4인" },
+        { "label": "💰 가격", "value": "1인 33,000원" },
+        { "label": "🔗 예약", "value": "roomsa.co.kr" }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "이런 두뇌 테마 더 볼까요?",
+      "actions": [
+        "문제풀이 맛집 더 추천받기 댓글 👇",
+        "저장하고 친구 4명 소집 💾"
+      ],
+      "next": "다음 후기도 쫄보 4인방이 들고 올게요 🔓"
+    }
+  ]
+}
