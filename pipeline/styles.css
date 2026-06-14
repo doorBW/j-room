@@ -238,6 +238,29 @@ body {
   padding: 22px 26px;
 }
 
+/* ---------- Timeline / Course stop (연방 코스) ---------- */
+.timeline { display: flex; flex-direction: column; margin-top: 28px; }
+.tl-row { display: flex; gap: 30px; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: baseline; }
+.tl-row:last-child { border-bottom: none; }
+.tl-row__time { min-width: 170px; font-size: 36px; font-weight: 800; color: var(--accent); }
+.tl-row__event { font-size: 34px; }
+.card--coursestop .card__body { justify-content: center; }
+.course-next {
+  margin-top: 26px;
+  font-size: 30px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 18px 26px;
+}
+
+/* ---------- Ratings (후기 별점) ---------- */
+.card--ratings .card__body { justify-content: center; }
+.ratings { display: flex; flex-direction: column; gap: 22px; margin-top: 36px; }
+.rating-row { display: flex; align-items: center; gap: 24px; font-size: 36px; }
+.rating-row__label { min-width: 200px; color: var(--muted); font-weight: 600; }
+.rating-row__num { font-weight: 800; font-size: 40px; color: var(--accent); margin-left: auto; }
+
 /* ---------- News item (소식) ---------- */
 .card--newsitem .card__body { padding: 28px 0; justify-content: center; }
 .news__tag {

@@ -111,7 +111,58 @@ function newsitem(c) {
     ${c.source ? `<div class="news__source">출처 · ${c.source}</div>` : ''}`;
 }
 
-const RENDERERS = { cover, intro, theme, compare, store, cta, lineup, newsitem };
+function ratings(c) {
+  const poster = c.posterData
+    ? `<div class="poster news__poster"><img src="${c.posterData}" alt="${c.name}"></div>`
+    : '';
+  const rows = (c.ratings || [])
+    .map((r) => `
+      <div class="rating-row">
+        <span class="rating-row__label">${r.label}</span>
+        ${stars(r.score)}
+        <span class="rating-row__num">${r.score}</span>
+      </div>`)
+    .join('');
+  const store = c.store ? `${c.store} ` : '';
+  return `
+    ${poster}
+    <h2 class="theme__name theme__name--below">${store}〈${c.name}〉</h2>
+    ${c.quote ? `<p class="theme__quote">"${c.quote}"</p>` : ''}
+    <div class="ratings">${rows}</div>
+    ${c.players ? `<div class="theme__felt">👥 권장 ${c.players}</div>` : ''}`;
+}
+
+function timeline(c) {
+  const rows = (c.schedule || [])
+    .map((s) => `
+      <div class="tl-row">
+        <span class="tl-row__time">${s.time}</span>
+        <span class="tl-row__event">${s.event}</span>
+      </div>`)
+    .join('');
+  return `
+    <h2 class="section__title">${c.title}</h2>
+    <div class="timeline">${rows}</div>`;
+}
+
+function coursestop(c) {
+  const poster = c.posterData
+    ? `<div class="poster news__poster"><img src="${c.posterData}" alt="${c.name}"></div>`
+    : '';
+  const info = (c.info || [])
+    .map((it) => `<span class="news__chip"><span class="label">${it.label}</span> ${it.value}</span>`)
+    .join('');
+  const store = c.store ? `${c.store} ` : '';
+  return `
+    <div class="news__tag">STOP ${c.no}</div>
+    ${poster}
+    <h2 class="theme__name theme__name--below">${store}〈${c.name}〉</h2>
+    <div class="news__info">${info}</div>
+    ${c.comment ? `<div class="theme__review">${c.comment}</div>` : ''}
+    ${c.next ? `<div class="course-next">${c.next}</div>` : ''}`;
+}
+
+const RENDERERS = { cover, intro, theme, compare, store, cta, lineup, newsitem, ratings, timeline, coursestop };
 
 /* ---------- shell + assembly ---------- */
 

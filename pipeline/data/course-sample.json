@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "slug": "course-sample",
+    "store": "연방 코스",
+    "handle": "@jroom.official",
+    "logo": "🔒 J-ROOM"
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "kicker": "쫄보 4인방의",
+      "title": "[샘플] 강남역",
+      "titleAccent": "4시간 3연방 코스",
+      "hook": "동선 5분, 점심까지 한 번에 🗺️",
+      "sub": "난이도 자연스럽게 ↗︎ · 입문자 친구와도 OK"
+    },
+    {
+      "type": "timeline",
+      "title": "타임라인",
+      "schedule": [
+        { "time": "10:00", "event": "모임 · 카페에서 작전 회의 ☕" },
+        { "time": "10:30", "event": "1번 테마 입장" },
+        { "time": "12:00", "event": "점심 (도보 3분 맛집)" },
+        { "time": "13:30", "event": "2번 테마 입장" },
+        { "time": "15:30", "event": "카페 휴식" },
+        { "time": "17:00", "event": "3번 테마 입장" },
+        { "time": "19:00", "event": "저녁 + 후기 회의 🍻" }
+      ]
+    },
+    {
+      "type": "coursestop",
+      "no": 1,
+      "store": "[샘플] 매장 A",
+      "name": "테마 1",
+      "info": [
+        { "label": "난이도", "value": "★★★" },
+        { "label": "👥", "value": "2~3인" },
+        { "label": "⏱️", "value": "60분" }
+      ],
+      "comment": "가볍게 몸 푸는 입문 코스. 첫 타임에 딱.",
+      "next": "🚶 다음 장소까지 도보 4분 · 가는 길에 점심"
+    },
+    {
+      "type": "coursestop",
+      "no": 2,
+      "store": "[샘플] 매장 B",
+      "name": "테마 2",
+      "info": [
+        { "label": "난이도", "value": "★★★★" },
+        { "label": "👥", "value": "3~4인" },
+        { "label": "⏱️", "value": "75분" }
+      ],
+      "comment": "난이도 한 단계 업. 점심 먹고 두뇌 풀가동.",
+      "next": "🚶 다음 장소까지 도보 6분 · 카페 추천"
+    },
+    {
+      "type": "coursestop",
+      "no": 3,
+      "store": "[샘플] 매장 C",
+      "name": "테마 3",
+      "info": [
+        { "label": "난이도", "value": "★★★★★" },
+        { "label": "👥", "value": "4인" },
+        { "label": "⏱️", "value": "80분" }
+      ],
+      "comment": "오늘의 메인. 체력·두뇌 다 쓰는 대미를 장식.",
+      "next": "🍻 마치고 저녁 + 후기 회의로 마무리"
+    },
+    {
+      "type": "intro",
+      "title": "총평",
+      "subtitle": "1인 약 9만원 · 약 9시간",
+      "points": [
+        "난이도 구성: 입문 → 중급 → 고급 <span class=\"accent\">자연스러운 상승</span>",
+        "장르: 추리 · 공포 · 모험 골고루",
+        "입문자 1명 껴도 무리 없는 동선"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "이 코스 어때요?",
+      "actions": [
+        "저장하고 친구 태그 ✏️",
+        "다음엔 어느 지역? 댓글로 👇"
+      ],
+      "next": "다른 지역 코스도 쫄보 4인방이 짜올게요 🗺️"
+    }
+  ]
+}

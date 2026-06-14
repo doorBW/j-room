@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "slug": "review-sample",
+    "store": "방탈출 후기",
+    "handle": "@jroom.official",
+    "logo": "🔒 J-ROOM"
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "kicker": "쫄보 4인방이 다녀온",
+      "title": "[샘플] 매장명",
+      "titleAccent": "〈테마명〉",
+      "hook": "기대 이상이었던 그 테마 👀",
+      "sub": "직접 플레이한 솔직 후기 (스포 없음)"
+    },
+    {
+      "type": "ratings",
+      "store": "[샘플] 매장명",
+      "name": "테마명",
+      "quote": "스포 없이 한 줄 총평이 들어가는 자리.",
+      "ratings": [
+        { "label": "난이도", "score": 4 },
+        { "label": "공포도", "score": 2 },
+        { "label": "추리비중", "score": 5 },
+        { "label": "추천도", "score": 5 }
+      ],
+      "players": "2~3인"
+    },
+    {
+      "type": "intro",
+      "title": "👍 좋았던 점",
+      "points": [
+        "장치 연결이 매끄럽고 동선이 깔끔",
+        "후반부 연출에서 한 방 있음",
+        "<span class=\"accent\">스포라 생략</span> — 직접 느껴보길"
+      ]
+    },
+    {
+      "type": "intro",
+      "title": "🤔 아쉬운 점",
+      "points": [
+        "초반 난이도 점프가 살짝 큼",
+        "특정 구간 힌트 의존도 높음"
+      ]
+    },
+    {
+      "type": "intro",
+      "title": "이런 분께",
+      "subtitle": "추천 / 비추천",
+      "points": [
+        "✅ 추리 비중 높은 테마 좋아하면",
+        "✅ 2~3인 소수 정예",
+        "❌ 공포 완전 불가하면 (살짝 있음)"
+      ]
+    },
+    {
+      "type": "store",
+      "title": "매장 정보",
+      "items": [
+        { "label": "📍 위치", "value": "[샘플] OO역 N번 출구" },
+        { "label": "⏱️ 시간", "value": "60분" },
+        { "label": "💰 가격", "value": "1인 OO,OOO원" },
+        { "label": "🔗 예약", "value": "store.kr · @store" }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "이런 테마 더 볼까요?",
+      "actions": [
+        "비슷한 거 추천받기 댓글 👇",
+        "저장하고 다음에 도전 💾"
+      ],
+      "next": "다음 후기도 쫄보 4인방이 들고 올게요 🔓"
+    }
+  ]
+}
