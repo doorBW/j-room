@@ -31,7 +31,7 @@ description: j-room 인스타그램(@jroom.official)의 "연방 코스(course)" 
 | N+1 | `intro` | 총평 (예산/난이도 구성/추천 대상) |
 | N+2 | `cta` | 저장·태그 유도 + 다음 지역 예고 |
 
-> 카드2는 timeline(시간표). 쫄보 브랜딩은 표지 kicker("쫄보 4인방의").
+> 카드2는 timeline(시간표). 쫄보 브랜딩은 표지 kicker("늙크크의").
 
 ---
 
@@ -41,7 +41,7 @@ cover/intro/cta는 추천과 동일. 신규는 `timeline`, `coursestop`.
 
 ### cover
 ```json
-{ "type": "cover", "kicker": "쫄보 4인방의", "title": "강남역", "titleAccent": "4시간 3연방 코스", "hook": "동선 5분, 점심까지 한 번에 🗺️", "sub": "난이도 자연스럽게 ↗︎ · 입문자 친구와도 OK" }
+{ "type": "cover", "kicker": "늙크크의", "title": "강남역", "titleAccent": "4시간 3연방 코스", "hook": "동선 5분, 점심까지 한 번에 🗺️", "sub": "난이도 자연스럽게 ↗︎ · 입문자 친구와도 OK" }
 ```
 
 ### timeline (카드 2)
