@@ -76,8 +76,8 @@ description: j-room 방탈출 인스타그램(@jroom.official)의 전체 운영 
 |------|------|------|
 | `insta-j-room-create-recom` | 추천 카드뉴스 제작 | ✅ 사용 가능 |
 | `insta-j-room-plan` | 이 안내 (운영 길잡이) | ✅ 이 문서 |
+| `insta-j-room-create-news` | 소식 카드뉴스 (AI 집계) | ✅ 사용 가능 |
 | `insta-j-room-create-course` | 연방 코스 카드뉴스 | 🔜 예정 |
-| `insta-j-room-create-news` | 소식 카드뉴스 (AI 집계) | 🔜 예정 |
 | `insta-j-room-create-review` | 후기 카드뉴스 | 🔜 예정 |
 
 > 새 카테고리 스킬은 `create-recom`을 본떠 만든다. 카드2(쫄보 4인방 자기소개)는 전 카테고리 공통 고정.

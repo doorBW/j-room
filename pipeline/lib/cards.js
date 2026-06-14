@@ -94,7 +94,24 @@ function lineup(c) {
     ${tip}`;
 }
 
-const RENDERERS = { cover, intro, theme, compare, store, cta, lineup };
+function newsitem(c) {
+  const poster = c.posterData
+    ? `<div class="poster news__poster"><img src="${c.posterData}" alt="${c.name}"></div>`
+    : '';
+  const info = (c.info || [])
+    .map((it) => `<span class="news__chip"><span class="label">${it.label}</span> ${it.value}</span>`)
+    .join('');
+  const store = c.store ? `${c.store} ` : '';
+  return `
+    <div class="news__tag">${c.tag || '🆕 신규'}</div>
+    ${poster}
+    <h2 class="theme__name theme__name--below">${store}〈${c.name}〉</h2>
+    <div class="news__info">${info}</div>
+    ${c.comment ? `<div class="theme__review">${c.comment}</div>` : ''}
+    ${c.source ? `<div class="news__source">출처 · ${c.source}</div>` : ''}`;
+}
+
+const RENDERERS = { cover, intro, theme, compare, store, cta, lineup, newsitem };
 
 /* ---------- shell + assembly ---------- */
 

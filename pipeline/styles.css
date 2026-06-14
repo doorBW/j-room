@@ -238,6 +238,32 @@ body {
   padding: 22px 26px;
 }
 
+/* ---------- News item (소식) ---------- */
+.card--newsitem .card__body { padding: 28px 0; justify-content: center; }
+.news__tag {
+  align-self: flex-start;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.news__poster { margin-top: 28px; width: 500px; height: 500px; }
+.card--newsitem .theme__name--below { margin-top: 32px; font-size: 56px; }
+.news__info { display: flex; flex-wrap: wrap; gap: 16px 22px; margin-top: 28px; }
+.news__chip {
+  font-size: 30px;
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 14px 22px;
+}
+.news__chip .label { color: var(--muted); }
+.card--newsitem .theme__review { margin-top: 28px; font-size: 33px; }
+.news__source { margin-top: 24px; font-size: 26px; color: var(--muted); }
+
 /* ---------- Store ---------- */
 .store__list { font-size: 38px; line-height: 2.05; }
 .store__list .label { color: var(--muted); display: inline-block; min-width: 130px; }

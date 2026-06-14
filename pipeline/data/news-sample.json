@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "slug": "news-sample",
+    "store": "방탈출 소식",
+    "handle": "@jroom.official",
+    "logo": "🔒 J-ROOM"
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "kicker": "쫄보 4인방이 모아온",
+      "title": "이번 주 방탈출 소식",
+      "titleAccent": "NEWS #01",
+      "hook": "신상 떴다, 예약 서둘러 🗞️",
+      "sub": "2026년 6월 2주차 · 신규 오픈 & 예약 소식"
+    },
+    {
+      "type": "intro",
+      "title": "이번 주 한눈에",
+      "subtitle": "출처는 각 매장 공식 채널 ✔️",
+      "points": [
+        "🆕 신규 오픈 <span class=\"accent\">3곳</span>",
+        "🎉 오픈 기념 이벤트 <span class=\"accent\">1건</span>",
+        "🔥 예약 전쟁 예상 테마 <span class=\"accent\">1개</span>"
+      ]
+    },
+    {
+      "type": "newsitem",
+      "tag": "🆕 신규 오픈",
+      "store": "[샘플]그래비티 강남",
+      "name": "테마 A",
+      "info": [
+        { "label": "📅 오픈", "value": "6/20" },
+        { "label": "📍", "value": "강남" },
+        { "label": "🎭", "value": "공포·스릴러" },
+        { "label": "👥", "value": "2~4인" }
+      ],
+      "comment": "예고편부터 분위기 미쳤다는 그 테마. 오픈런 각.",
+      "source": "@sample_store"
+    },
+    {
+      "type": "newsitem",
+      "tag": "🆕 신규 오픈",
+      "store": "[샘플]키이스케이프 홍대",
+      "name": "테마 B",
+      "info": [
+        { "label": "📅 오픈", "value": "6/22" },
+        { "label": "📍", "value": "홍대" },
+        { "label": "🎭", "value": "추리" },
+        { "label": "👥", "value": "3~5인" }
+      ],
+      "comment": "추리 매니아 사이에서 기대 폭발 중인 신작.",
+      "source": "@sample_store2"
+    },
+    {
+      "type": "newsitem",
+      "tag": "🎉 오픈 이벤트",
+      "store": "[샘플]제로월드 건대",
+      "name": "테마 C",
+      "info": [
+        { "label": "📅", "value": "~6/30" },
+        { "label": "📍", "value": "건대" },
+        { "label": "💰", "value": "오픈 할인 20%" }
+      ],
+      "comment": "오픈 기념 평일 한정 할인. 입문자에게 기회.",
+      "source": "@sample_store3"
+    },
+    {
+      "type": "cta",
+      "title": "가보고 싶은 곳 있어요?",
+      "actions": [
+        "댓글로 찜 남기기 👇",
+        "저장해두고 예약 오픈 알림 💾"
+      ],
+      "next": "다음 주 소식도 쫄보 4인방이 모아올게요 🗞️"
+    }
+  ]
+}
