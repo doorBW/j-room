@@ -128,8 +128,8 @@ description: j-room 인스타그램(@jroom.official)의 "추천(recommendation)"
   "points": [
     "<span class=\"accent\">스마일</span> · 100+ 쫄보, 힘에 밀리면 감 · 인테리어 감탄 전문 1",
     "<span class=\"accent\">메타몽</span> · 30+ 왕쫄보, 밀어도 안 감 · 인테리어 감탄 전문 2",
-    "<span class=\"accent\">루피</span> · 100+ 쫄탱, 뼛속까지 이과 똑똑이 🧠",
-    "<span class=\"accent\">동자모</span> · 350+ 쫄탱, 인생 최대 업적 멸탐대 1위 🏆"
+    "<span class=\"accent\">루피</span> · 350+ 쫄탱, 인생 최대 업적 멸탐대 1위 🏆",
+    "<span class=\"accent\">동자모</span> · 100+ 쫄탱, 뼛속까지 이과 똑똑이 🧠"
   ]
 }
 ```

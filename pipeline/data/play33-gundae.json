@@ -21,8 +21,8 @@
       "points": [
         "<span class=\"accent\">스마일</span> · 100+ 쫄보, 힘에 밀리면 감 · 인테리어 감탄 전문 1",
         "<span class=\"accent\">메타몽</span> · 30+ 왕쫄보, 밀어도 안 감 · 인테리어 감탄 전문 2",
-        "<span class=\"accent\">루피</span> · 100+ 쫄탱, 뼛속까지 이과 똑똑이 🧠",
-        "<span class=\"accent\">동자모</span> · 350+ 쫄탱, 인생 최대 업적 멸탐대 1위 🏆"
+        "<span class=\"accent\">루피</span> · 350+ 쫄탱, 인생 최대 업적 멸탐대 1위 🏆",
+        "<span class=\"accent\">동자모</span> · 100+ 쫄탱, 뼛속까지 이과 똑똑이 🧠"
       ]
     },
     {
@@ -31,7 +31,6 @@
       "name": "그날",
       "quote": "나는… 그 날 이후. 뜬 눈으로 며칠을 지새웠다.",
       "genre": "공포 · 드라마",
-      "officialDiff": 2,
       "officialFear": "1",
       "players": "2~4인",
       "time": "60분",
@@ -46,7 +45,6 @@
       "name": "목격자",
       "quote": "모든 사건은 그것을 목격한 자에 의해 기록된다.",
       "genre": "드라마 · 스릴러",
-      "officialDiff": 2,
       "officialFear": "1",
       "players": "2~3인",
       "time": "65분",
@@ -63,7 +61,6 @@
       "badge": "팀 최애",
       "quote": "스마일~ 행복을 드리는 스마일 콜센터! 김미영입니다.",
       "genre": "공포 · 스릴러",
-      "officialDiff": 3,
       "officialFear": "2",
       "players": "2~5인",
       "time": "60분",

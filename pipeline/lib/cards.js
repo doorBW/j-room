@@ -41,11 +41,14 @@ function theme(c) {
   const poster = c.posterData
     ? `<div class="poster"><img src="${c.posterData}" alt="${c.name}"></div>`
     : '';
+  const official = [c.genre];
+  if (c.officialDiff) official.push(`난이도(공식) ${difficultyStars(c.officialDiff)}`);
+  if (c.officialFear) official.push(`공포도(공식) ${c.officialFear}`);
   return `
     ${poster}
     <h2 class="theme__name theme__name--below">〈${c.name}〉${badge}</h2>
     <p class="theme__quote">"${c.quote}"</p>
-    <p class="theme__meta">${c.genre} · 난이도(공식) ${difficultyStars(c.officialDiff)} · 공포도(공식) ${c.officialFear}<br>${c.players} · ${c.time} · 1인 ${c.price}원</p>
+    <p class="theme__meta">${official.join(' · ')}<br>${c.players} · ${c.time} · 1인 ${c.price}원</p>
     <div class="theme__felt">체감난이도 ${difficultyStars(c.feltDiff)} · 체감공포도 <b>${c.feltFear}</b></div>
     <div class="theme__review">${c.review}</div>`;
 }
