@@ -150,9 +150,6 @@ function timeline(c) {
 }
 
 function coursestop(c) {
-  const poster = c.posterData
-    ? `<div class="poster news__poster"><img src="${c.posterData}" alt="${c.name}"></div>`
-    : '';
   const info = (c.info || [])
     .map((it) => `<span class="news__chip"><span class="label">${it.label}</span> ${it.value}</span>`)
     .join('');
@@ -162,7 +159,6 @@ function coursestop(c) {
     : (c.comment ? `<div class="theme__review">${c.comment}</div>` : '');
   return `
     <div class="news__tag">STOP ${c.no}</div>
-    ${poster}
     <h2 class="theme__name theme__name--below">${storeLine}〈${c.name}〉</h2>
     <div class="news__info">${info}</div>
     ${comment}
@@ -177,8 +173,12 @@ function renderCard(c, meta, index, total) {
   const fn = RENDERERS[c.type];
   if (!fn) throw new Error(`Unknown card type: ${c.type}`);
   const accentClass = c.accent ? ' card--accent' : '';
+  const courseBg = c.type === 'coursestop' && c.posterData
+    ? `<div class="course-bg" style="background-image:url('${c.posterData}')"></div>`
+    : '';
   return `
   <div class="card card--${c.type}${accentClass}">
+    ${courseBg}
     <div class="card__header">
       <span class="logo">${meta.logo || '🔒 J-ROOM'}</span>
       <span class="store">${meta.store}</span>

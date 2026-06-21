@@ -31,6 +31,7 @@
     {
       "type": "coursestop",
       "no": 1,
+      "poster": "assets/images/zeroworld-hongdae/kkambang.jpg",
       "store": "제로월드 홍대",
       "name": "깜방탈출",
       "info": [
@@ -49,6 +50,7 @@
     {
       "type": "coursestop",
       "no": 2,
+      "poster": "assets/images/zeroworld-hongdae/nox.png",
       "store": "제로월드 홍대",
       "name": "NOX",
       "info": [
@@ -67,6 +69,7 @@
     {
       "type": "coursestop",
       "no": 3,
+      "poster": "assets/images/zeroworld-hongdae/floornoise.jpg",
       "store": "제로월드 홍대",
       "name": "층간소음",
       "info": [
@@ -104,6 +107,7 @@
     {
       "type": "coursestop",
       "no": 5,
+      "poster": "assets/images/ttescape/hidden.png",
       "store": "티켓투이스케이프",
       "name": "히든시나리오",
       "info": [
@@ -122,6 +126,7 @@
     {
       "type": "coursestop",
       "no": 6,
+      "poster": "assets/images/ttescape/364il.jpg",
       "store": "티켓투이스케이프",
       "name": "364일",
       "info": [

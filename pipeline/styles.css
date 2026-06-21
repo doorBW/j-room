@@ -253,6 +253,18 @@ body {
   border-radius: 14px;
   padding: 18px 24px;
 }
+.course-bg {
+  position: absolute;
+  inset: 0;
+  background-size: auto 75%;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  opacity: 0.16;
+  z-index: 1;
+}
+.card--coursestop .card__header,
+.card--coursestop .card__body,
+.card--coursestop .card__footer { position: relative; z-index: 2; }
 .course-notes { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 13px; }
 .course-notes li { font-size: 30px; line-height: 1.38; padding-left: 34px; position: relative; }
 .course-notes li::before { content: '·'; position: absolute; left: 10px; top: -2px; color: var(--accent); font-weight: 800; font-size: 40px; }
