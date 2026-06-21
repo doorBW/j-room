@@ -242,8 +242,8 @@ body {
 .timeline { display: flex; flex-direction: column; margin-top: 28px; }
 .tl-row { display: flex; gap: 30px; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: baseline; }
 .tl-row:last-child { border-bottom: none; }
-.tl-row__time { min-width: 170px; font-size: 36px; font-weight: 800; color: var(--accent); }
-.tl-row__event { font-size: 34px; }
+.tl-row__time { min-width: 248px; font-size: 31px; font-weight: 800; color: var(--accent); }
+.tl-row__event { font-size: 32px; }
 .card--coursestop .card__body { justify-content: center; }
 .course-next {
   margin-top: 24px;
