@@ -34,36 +34,42 @@ Graph API는 **로컬 파일을 받지 않는다.** Meta 서버가 이미지를 
 
 ---
 
-## 1. 사전 준비 — Instagram MCP가 이 세션에 로드됐는지 확인 ⚠️
+## 1. 사전 준비 — Instagram MCP 로드 + 계정 검증 ⚠️ (가장 중요)
 
-MCP 연결은 **세션·프로젝트 스코프**를 탄다. 현재 `instagram-openescape` 서버는
-`~/.claude.json`의 **OpenEscape 프로젝트 스코프에만** 등록돼 있어 **j-room 세션에선 로드되지 않는다.**
+발행 대상은 **@jroom.official** 이고, 이 계정 전용 MCP 서버는 **`instagram-jroom`** 이다.
+(jroom 전용 장기 토큰 + IG business account_id **`17841428955013517`** 로 등록. 앱 "OpenEscape Publisher" app_id `1027422653062310`. JRoom FB 페이지 id `1099255746614957`.)
 
-**STEP A — 도구 존재 확인**
+> 🚨 **`instagram-openescape` 서버는 다른 계정(`open.escape`)이다. 절대 그 서버/토큰으로 jroom 콘텐츠를 발행하지 말 것.**
+> 두 서버가 동시에 로드돼 있을 수 있다(open.escape는 user 스코프 전역 등록). openescape 토큰을 복사하면 jroom에 발행된다고 **잘못 가정했다가 엉뚱한 계정에 올릴 뻔한 사고**가 있었다 → 그래서 STEP A-2 계정검증이 필수다.
+
+**STEP A — jroom 도구 존재 확인**
 ```
-ToolSearch  query: "instagram publish_carousel"   (또는 "select:mcp__instagram-openescape__publish_carousel")
+ToolSearch  query: "select:mcp__instagram-jroom__publish_carousel"
 ```
-- 보이면 → 도구명 확인(보통 `mcp__instagram-openescape__publish_carousel`). 2번으로.
-- **안 보이면** → 아래 STEP B로 j-room 스코프에 등록 후 **세션 재시작** 필요.
+- 보이면 → **STEP A-2로(건너뛰지 말 것).**
+- **안 보이면** → 아래 STEP B로 등록 후 **세션 재시작** 필요.
 
-**STEP B — j-room 스코프에 서버 등록(최초 1회)**
-OpenEscape에 이미 있는 설정(토큰 포함)을 j-room 프로젝트 스코프로 **복사**한다(토큰 재노출 없음):
+**STEP A-2 — 계정 검증 (발행 전 필수 가드)** 🔒
+```
+mcp__instagram-jroom__get_profile_info()   → 반환 username 확인
+```
+- `username == "jroom.official"` → OK, 2번으로.
+- **다른 값(예: open.escape)이면 즉시 중단.** 잘못된 서버/토큰이다. 절대 발행 호출하지 말 것.
+
+**STEP B — instagram-jroom 서버 등록(최초 1회, 별도 터미널)**
+open.escape 토큰은 재사용 불가 — jroom **전용 장기 토큰**이 필요하다.
+1. Graph API Explorer(앱: **OpenEscape Publisher**)에서 **사용자 토큰** 생성. 권한: `instagram_basic, instagram_content_publish, pages_show_list, pages_read_engagement`. 팝업에서 **JRoom 페이지 포함** 승인.
+2. 토큰 옆 **ⓘ → 액세스 토큰 도구 → "Extend Access Token"** 으로 **60일 장기 토큰** 발급(단기 토큰은 1~2h 만료).
+3. 등록:
 ```bash
-python3 - <<'PY'
-import json, os, shutil, time
-p = os.path.expanduser("~/.claude.json")
-shutil.copy(p, p + ".bak-%d" % int(time.time()))   # 백업
-d = json.load(open(p))
-projs = d.setdefault("projects", {})
-src = projs["/Users/tigercow/AI/escape-ai/OpenEscape"]["mcpServers"]["instagram-openescape"]
-jr = projs.setdefault("/Users/tigercow/AI/escape-ai/j-room", {}).setdefault("mcpServers", {})
-jr["instagram-openescape"] = src
-json.dump(d, open(p, "w"), indent=2, ensure_ascii=False)
-print("OK: j-room 스코프에 instagram-openescape 복사 완료. Claude Code 세션을 재시작하세요.")
-PY
+claude mcp add -s user instagram-jroom \
+  -e INSTAGRAM_ACCESS_TOKEN=<jroom 장기토큰> \
+  -e INSTAGRAM_ACCOUNT_ID=17841428955013517 \
+  -- npx -y @mcpware/instagram-mcp
 ```
-> ⚠️ `~/.claude.json`은 **절대 커밋 금지**(토큰 포함). repo 밖 파일이라 .gitignore 무관.
-> 모든 프로젝트에서 쓰려면 user 스코프 권장: `claude mcp add -s user ...` (별도 터미널).
+4. **세션 재시작** → STEP A부터 다시.
+> ⚠️ 토큰은 **채팅에 붙여넣지 말고 터미널에서만** 다룬다. `~/.claude.json`은 **절대 커밋 금지**(토큰 포함).
+> account_id 확인/재취득: 토큰으로 `me/accounts?fields=name,instagram_business_account{id,username}` → `"name":"JRoom"` 의 `instagram_business_account.id`.
 
 ---
 
@@ -105,19 +111,24 @@ scripts/ig_prepare.sh <slug>
   매장/테마/가격 정확 · **스포일러 없음**.
 - 장수 = 캐러셀 2~10장 범위인지(7/8 OK).
 
-### STEP 4 — 공개 URL 호스팅
+### STEP 4 — 공개 URL 호스팅 (⚠️ `--github` 사용, litterbox 금지)
 ```bash
-scripts/ig_host.sh <slug>            # 기본: litterbox 임시(72h) — repo 미커밋
-# 또는
-scripts/ig_host.sh <slug> --github   # 대안: 공개 repo raw URL(영구/소유), commit+push
+scripts/ig_host.sh <slug> --github   # ✅ 권장(기본): 공개 repo raw URL(영구/소유), commit+push
+# scripts/ig_host.sh <slug>          # ⛔ litterbox(인자 없는 기본값) — IG 발행 실패 확인됨, 쓰지 말 것
 ```
 - 출력: 공개 URL이 **카드 순서(01→NN)대로** 한 줄에 하나씩.
 - **검증**: 첫 URL 하나를 `curl -sI "<url>" | head -1` 로 `200` 확인 후 진행.
-  (github 모드는 push 직후 raw CDN 반영에 수 초 걸릴 수 있음 → 실패 시 2~3초 후 재시도.)
-- litterbox 실패 시 `--github`로 폴백.
+  (push 직후 raw CDN 반영에 수 초 걸릴 수 있음 → 실패 시 2~3초 후 재시도.)
 
-> 호스팅 방식 트레이드오프는 `scripts/ig_host.sh` 상단 주석 참고.
-> 핵심: **발행 성공 후 IG가 자체 CDN에 사본 보관** → 임시 URL이면 충분(저작권 포스터를 git 영구이력에 안 남김).
+> 🚨 **litterbox(catbox) 금지.** 2026-06-21 play33-gundae 발행에서 litterbox URL로
+> `publish_carousel`이 **실패**: `Only photo or video can be accepted as media type`.
+> FB 크롤러 차단이 아니다 — `facebookexternalhit` UA로도 200·image/jpeg 정상 응답.
+> **catbox/litterbox ↔ Instagram 인제스트 비호환**(IG가 catbox 제공 이미지를 디코드/검증 못 함; 이미지 자체는 유효).
+> `ig_host.sh`의 인자 없는 기본값이 litterbox이므로 **반드시 `--github`를 명시**한다.
+>
+> 트레이드오프: github 모드는 카드 JPG가 공개 repo `content/published/_media/<slug>/` git 이력에
+> 영구 보존된다. 단 IG에 올라가는 최종 결과물과 동일 콘텐츠이고, 발행 성공 후 IG가 자체 CDN에
+> 사본을 보관하므로 수용 가능. 자세한 건 `scripts/ig_host.sh` 상단 주석 참고.
 
 ### STEP 5 — 캡션 추출
 draft .md 안의 **"인스타그램 캡션"** 헤딩 아래 첫 ``` 코드펜스 ``` 블록이 캡션이다.
@@ -135,13 +146,13 @@ awk '/캡션/{f=1} f&&/^[`][`][`]/{c++; if(c==1)next; if(c==2)exit} f&&c==1{prin
 ### STEP 7 — 캐러셀 게시 (MCP 호출)
 승인되면 publish_carousel 호출:
 ```
-mcp__instagram-openescape__publish_carousel(
+mcp__instagram-jroom__publish_carousel(          # ⚠️ openescape 아님! jroom 서버
   image_urls = [ "<url-01>", "<url-02>", ... "<url-NN>" ],   # STEP 4 순서 그대로
   caption    = "<STEP 5 캡션 전문>"
 )
 ```
 - 반환값에서 **media id / permalink**를 확보(후처리·회고에 기록).
-- 실패 시 메시지 확인: 토큰 만료(재발급), URL 비공개(호스팅 재시도), 비율/포맷(JPG·4:5 확인), 레이트리밋(잠시 후).
+- 실패 시 메시지 확인: **`Only photo or video can be accepted...`(=litterbox 호스팅 탓 → STEP4대로 `--github` 재호스팅 후 재시도)**, 토큰 만료(재발급), URL 비공개(호스팅 재시도), 비율/포맷(JPG·4:5 확인), 레이트리밋(잠시 후).
 
 ---
 
@@ -173,12 +184,13 @@ git push
 
 | 증상 | 원인 / 해결 |
 |------|------------|
-| ToolSearch에 instagram 도구 안 보임 | j-room 스코프 미등록 → §1 STEP B 후 **세션 재시작** |
+| ToolSearch에 instagram-jroom 도구 안 보임 | 미등록 → §1 STEP B로 instagram-jroom 등록 후 **세션 재시작** |
+| `get_profile_info`가 open.escape 반환 | 잘못된 서버 — instagram-jroom 서버/토큰·account_id(`17841428955013517`) 확인. **openescape로 발행 금지** |
 | `Media must be a publicly accessible URL` | 호스팅 URL이 비공개/만료/404 → `curl -sI`로 200 확인, 재호스팅 |
 | PNG로 올려 실패 / 흐릿 | 반드시 `ig_prepare.sh`로 **JPG** 변환분(`/ig/*.jpg`) 사용 |
 | `Aspect ratio not supported` | 4:5(1080×1350) 확인. 렌더 원본이 4:5라 보통 문제없음 |
-| 토큰 만료(`OAuthException`) | 장기 토큰 재발급(README Step 6) 후 `~/.claude.json` env 갱신 |
-| litterbox 업로드 실패 | 일시 장애 가능 → `scripts/ig_host.sh <slug> --github` 폴백 |
+| 토큰 만료(`OAuthException`) | jroom 장기 토큰 재발급(Graph Explorer ⓘ→Extend) 후 `claude mcp add`로 instagram-jroom env 갱신 → 재시작 |
+| litterbox URL로 발행 실패 (`Only photo or video can be accepted as media type`) | catbox/litterbox ↔ IG 인제스트 비호환 (FB 크롤러 차단 아님 — `facebookexternalhit` UA로도 200·jpeg 정상). **litterbox 쓰지 말고 `scripts/ig_host.sh <slug> --github`로 호스팅** (STEP4 기본) |
 | 캐러셀 장수 오류 | 2~10장만 허용. 7/8장 OK, 1장이면 `publish_media` 사용 |
 
 ---
@@ -193,7 +205,7 @@ post_date: <YYYY-MM-DD>
 ig_media_id: <id>
 ig_permalink: <url>
 image_count: <N>
-host: <litterbox|github>
+host: github   # 기본 권장(litterbox는 IG 발행 비호환)
 ---
 
 # <매장/주제> 발행 회고 (<YYYY-MM-DD>)
@@ -217,11 +229,11 @@ host: <litterbox|github>
 
 ## 7. 완료 체크리스트
 
-- [ ] §1: instagram MCP 도구 로드 확인(ToolSearch)
+- [ ] §1: instagram-jroom 도구 로드(ToolSearch) + `get_profile_info`로 **jroom.official** 계정 검증 🔒
 - [ ] 대상 draft 선택(status: ready) + slug 확정
 - [ ] PNG 존재(없으면 렌더) → `ig_prepare.sh`로 JPG 변환
 - [ ] 이미지 눈으로 검토(별점/줄바꿈/footer/오타/스포)
-- [ ] `ig_host.sh`로 공개 URL 확보 + `curl -sI` 200 검증
+- [ ] `ig_host.sh <slug> --github`로 공개 URL 확보 + `curl -sI` 200 검증 (litterbox 금지)
 - [ ] 캡션 추출(원문 유지)
 - [ ] **사용자 발행 승인** 받음
 - [ ] `publish_carousel` 호출 성공 → permalink/media_id 확보
