@@ -79,6 +79,7 @@ description: j-room 방탈출 인스타그램(@jroom.official)의 전체 운영 
 | `insta-j-room-create-course` | 연방 코스 카드뉴스 | ✅ 사용 가능 |
 | `insta-j-room-create-news` | 소식 카드뉴스 (AI 집계) | ✅ 사용 가능 |
 | `insta-j-room-publish` | **인스타 발행** (캐러셀 업로드 + 회고) | ✅ 사용 가능 |
+| `insta-j-room-inventory` | **콘텐츠 재고 현황** 자동 집계 | ✅ 사용 가능 |
 | `insta-j-room-plan` | 이 안내 (운영 길잡이) | ✅ 이 문서 |
 
 > **카드2는 카테고리별로 다름**: 추천 = 늙크크 자기소개(고정) / 후기 = 별점 / 연방 = 타임라인 / 소식 = 이번 주 요약.
@@ -183,4 +184,4 @@ description: j-room 방탈출 인스타그램(@jroom.official)의 전체 운영 
 - **발행하기** → `/insta-j-room-publish` (ready 콘텐츠 골라 캐러셀 업로드 → published 이동 + 회고)
 - **다음에 뭐 만들지?** → [BACKLOG.md](../../../content/ideas/BACKLOG.md)에서 ⭐ 우선순위 (추천이 가장 안 끊김)
 - **발행 일정?** → §3 캘린더 + [CONTENT_STRATEGY.md](../../../docs/CONTENT_STRATEGY.md)
-- **재고 점검** → BACKLOG.md 상단 재고 + `content/drafts/` 의 status: ready 개수
+- **재고 점검** → `/insta-j-room-inventory` (실제 파일 자동 집계)
