@@ -9,7 +9,7 @@
 |------|------|---------|
 | `hidden.png` | 히든시나리오 | https://cdn.zamfit.co.kr/Escape/3e815d43-29f8-404c-b3bb-d714633a9c70.png |
 | `364il.jpg` | 364일 | https://cdn.zamfit.co.kr/Escape/ad07c3b6-7018-49c4-b310-f47bc9def327.jpg |
-| (미확보) | 웨스턴뱅 | 잼핏 미등록 — 공홈/인스타(@ttoescape_)에서 별도 확보 필요 |
+| `westernbang.jpeg` | 웨스턴뱅 | https://cdn.imweb.me/upload/S202508278c2d921c9bb5e/172773bcb9327.jpeg |
 
 출처: 잼핏(web.zamfit.kr) · 공식 ttescape.co.kr · @ttoescape_
 - 티켓투이스케이프: 마포구 와우산로29가길 83 3층 (홍대입구역 9번 출구)

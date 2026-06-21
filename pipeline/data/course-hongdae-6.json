@@ -89,6 +89,7 @@
     {
       "type": "coursestop",
       "no": 4,
+      "poster": "assets/images/ttescape/westernbang.jpeg",
       "store": "티켓투이스케이프",
       "name": "웨스턴뱅",
       "info": [
