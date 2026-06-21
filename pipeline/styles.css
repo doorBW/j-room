@@ -246,13 +246,20 @@ body {
 .tl-row__event { font-size: 34px; }
 .card--coursestop .card__body { justify-content: center; }
 .course-next {
-  margin-top: 26px;
-  font-size: 30px;
+  margin-top: 24px;
+  font-size: 29px;
   color: var(--muted);
   background: rgba(255,255,255,0.05);
   border-radius: 14px;
-  padding: 18px 26px;
+  padding: 18px 24px;
 }
+.course-notes { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 13px; }
+.course-notes li { font-size: 30px; line-height: 1.38; padding-left: 34px; position: relative; }
+.course-notes li::before { content: '·'; position: absolute; left: 10px; top: -2px; color: var(--accent); font-weight: 800; font-size: 40px; }
+.card--coursestop .card__body { padding: 24px 0; }
+.card--coursestop .theme__name--below { font-size: 48px; margin-top: 18px; line-height: 1.15; }
+.card--coursestop .news__info { margin-top: 22px; gap: 12px 16px; }
+.card--coursestop .news__chip { font-size: 27px; padding: 12px 18px; }
 
 /* ---------- Ratings (후기 별점) ---------- */
 .card--ratings .card__body { justify-content: center; }

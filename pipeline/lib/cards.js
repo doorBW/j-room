@@ -156,13 +156,16 @@ function coursestop(c) {
   const info = (c.info || [])
     .map((it) => `<span class="news__chip"><span class="label">${it.label}</span> ${it.value}</span>`)
     .join('');
-  const store = c.store ? `${c.store} ` : '';
+  const storeLine = c.store ? `${c.store}<br>` : '';
+  const comment = Array.isArray(c.comment)
+    ? `<ul class="course-notes">${c.comment.map((x) => `<li>${x}</li>`).join('')}</ul>`
+    : (c.comment ? `<div class="theme__review">${c.comment}</div>` : '');
   return `
     <div class="news__tag">STOP ${c.no}</div>
     ${poster}
-    <h2 class="theme__name theme__name--below">${store}〈${c.name}〉</h2>
+    <h2 class="theme__name theme__name--below">${storeLine}〈${c.name}〉</h2>
     <div class="news__info">${info}</div>
-    ${c.comment ? `<div class="theme__review">${c.comment}</div>` : ''}
+    ${comment}
     ${c.next ? `<div class="course-next">${c.next}</div>` : ''}`;
 }
 
